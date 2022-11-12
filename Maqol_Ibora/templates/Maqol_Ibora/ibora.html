@@ -1,0 +1,76 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block menu %}
+   <section class = "nav_sec">
+                <ul>
+                    <li><a href="{% url 'Base:tarjimayi_hol' %}">Tarjimayi hol</a></li>
+                    <li><a href="{% url 'Search:search' %}">Korpus bo'yicha qidiruv</a></li>
+                    <li><a href="{% url 'Devon:devon' %}">Devonlari</a></li>
+                    <li><a href="{% url 'Asar:asar' %}">Asarlari</a></li>
+                    <li style="background-image: url({% static 'Base/images/heritage-bg.png' %})" class = "badoee activve"><a href="">"Badoye` ul-vasat"</a>
+                        <ul class = "Badoe">
+                            <li><a href="{% url 'Gazal:gazal' %}">G'azallar</a></li>
+                            <li><a href="{% url 'maqol_ibora:maqol' %}">Maqollar</a></li>
+                            <li style="background-image: url({% static 'Base/images/heritage-bg.png' %})" class = "activve"><a href={% url 'maqol_ibora:ibora' %}>Iboralar</a></li>
+                            <li class = "sanatt"><a href="">She`riy san`atlar</a>
+                                <ul class ="Sanat">
+                                    <li><a href="{% url 'sheriy_sanat:talmeh' %}">Talmeh</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tanosib' %}">Tanosib</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tazod' %}">Tazod</a></li>
+                                     <li><a href="{% url 'sheriy_sanat:tashbeh' %}">Tashbih</a></li>
+                                </ul>
+                            </li>
+                             <li><a href="{% url 'Arxaizm_istorizm:arzaizm' %}">Arxaizm</a></li>
+                            <li><a href='{% url 'Arxaizm_istorizm:istorizm' %}'>Istorizm</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'Base:korpus_haqida' %}">Alisher Navoiy korpusi haqida</a></li>
+                    <li><a href="{% url 'Base:maqola' %}">Korpusga oid maqolalar</a></li>
+                </ul>
+            </section>
+{% endblock %}
+
+
+{% block content %}
+    <section style="background-image: url({% static 'Base/images/Middle-bg.png' %})" class = "main_back main1">
+        <div class = "sec_div" style="margin-top:150px;">
+            <h1>"Badoye` ul-vasat" devoni g`azallarida uchraydigan xalq iboralari</h1>
+            <div  class = 'sec_div4'>
+                {% for iboras in ibora %}
+                <div style="background-image: url({% static 'Base/images/heritage-bg.png' %})" class = "maqols">
+                    {{ iboras.bayt | safe}}
+
+                    <hr class = "line">
+                    <p class = "maqol_new"><b>{{ iboras.ibora }}</b></p>
+                </div>
+              {% endfor %}
+            </div>
+
+
+        <div class="pagination">
+                {% if ibora.has_previous %}
+                <a href="?page={{ ibora.previous_page_number }}">Prev</a>
+                      {% else %}
+                     <a class = "select2-container--disabled" href="#">Prev</a>
+                {% endif %}
+  {% if ibora.has_previous  %}
+                <a href="?page={{ ibora.previous_page_number }}">{{ ibora.previous_page_number }}</a>
+            {% endif %}
+                <a href="?page={{ ibora.number }}" class="active">{{ ibora.number }}</a>
+ {% if ibora.has_next %}
+                <a href="?page={{ ibora.next_page_number }}">{{ ibora.next_page_number }}</a>
+            {% endif %}
+
+        {% if ibora.has_next %}
+                <a href="?page={{ ibora.next_page_number }}">Next</a>
+            {% else %}
+            <a class = "select2-container--disabled" href="#">Next</a>
+            {% endif %}
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+{% endblock %}

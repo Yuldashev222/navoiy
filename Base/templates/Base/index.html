@@ -1,0 +1,68 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block menu %}
+
+           <section class = "nav_sec">
+                <ul>
+                    <li><a href="{% url 'Base:tarjimayi_hol' %}">Tarjimayi hol</a></li>
+                    <li><a href="{% url 'Search:search' %}">Korpus bo'yicha qidiruv</a></li>
+                    <li><a href="{% url 'Devon:devon' %}">Devonlari</a></li>
+                    <li><a href="{% url 'Asar:asar' %}">Asarlari</a></li>
+                    <li class = "badoee"><a href="">"Badoye` ul-vasat"</a>
+                        <ul class = "Badoe">
+                            <li><a href="{% url 'Gazal:gazal' %}">G'azallar</a></li>
+                            <li><a href="{% url 'maqol_ibora:maqol' %}">Maqollar</a></li>
+                            <li><a href={% url 'maqol_ibora:ibora' %}>Iboralar</a></li>
+                            <li class = "sanatt"><a href="">She`riy san`atlar</a>
+                                <ul class ="Sanat">
+                                    <li><a href="{% url 'sheriy_sanat:talmeh' %}">Talmeh</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tanosib' %}">Tanosib</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tazod' %}">Tazod</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tashbeh' %}">Tashbih</a></li>
+                                </ul>
+                            </li>
+                             <li><a href="{% url 'Arxaizm_istorizm:arzaizm' %}">Arxaizm</a></li>
+                            <li><a href='{% url 'Arxaizm_istorizm:istorizm' %}'>Istorizm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'Base:korpus_haqida' %}">Alisher Navoiy korpusi haqida</a></li>
+                    <li><a href="{% url 'Base:maqola' %}">Korpusga oid maqolalar</a></li>
+                </ul>
+            </section>
+
+{% endblock %}
+
+<div class = "korishlar">
+        <p>{{ view }}</p>
+        <img src="{% static 'Base/images/eye.png' %}" alt="">
+    </div>
+{% block content %}
+
+    <section style="background-image: url({% static 'Base/images/Middle-bg.png' %})" class = "main_back">
+        <div class = "miniatura m1">
+            <div class = "miniatura_img">
+                <a target="_blank" href="{% static 'Base/images/min1.jpg' %}"><img src="{% static 'Base/images/min1.jpg' %}" alt=""></a>
+            </div>
+            <div class = "miniatura_img">
+                <a target="_blank" href="{% static 'Base/images/min2.jpg' %}"><img src="{% static 'Base/images/min2.jpg' %}" alt=""></a>
+            </div>
+            <div class = "miniatura_img">
+                <a target="_blank" href="{% static 'Base/images/min3.jpg' %}"><img src="{% static 'Base/images/min3.jpg' %}" alt=""></a>
+            </div>
+        </div>
+
+        <div class = "miniatura m2">
+            <div class = "miniatura_img">
+                <a target="_blank" href="{% static 'Base/images/min4.jpg' %}"><img src="{% static 'Base/images/min4.jpg' %}" alt=""></a>
+            </div>
+            <div class = "miniatura_img">
+                <a target="_blank" href="{% static 'Base/images/min5.jpg' %}"><img src="{% static 'Base/images/min5.jpg' %}" alt=""></a>
+            </div>
+            <div class = "miniatura_img">
+                <a target="_blank" href="{% static 'Base/images/min6.jfif' %}"><img src="{% static 'Base/images/min6.jfif' %}" alt=""></a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+

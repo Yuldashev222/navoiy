@@ -1,0 +1,105 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block menu %}
+   <section class = "nav_sec">
+                <ul>
+                    <li><a href="{% url 'Base:tarjimayi_hol' %}">Tarjimayi hol</a></li>
+                    <li><a href="{% url 'Search:search' %}">Korpus bo'yicha qidiruv</a></li>
+                    <li><a href="{% url 'Devon:devon' %}">Devonlari</a></li>
+                    <li><a href="{% url 'Asar:asar' %}">Asarlari</a></li>
+                    <li class = "badoee activve"><a href="">"Badoye` ul-vasat"</a>
+                        <ul class = "Badoe">
+                            <li style="background-image: url({% static 'Base/images/heritage-bg.png' %})" class = "activve"><a href="{% url 'Gazal:gazal' %}">G'azallar</a></li>
+                            <li><a href="{% url 'maqol_ibora:maqol' %}">Maqollar</a></li>
+                            <li><a href={% url 'maqol_ibora:ibora' %}>Iboralar</a></li>
+                            <li class = "sanatt"><a href="">She`riy san`atlar</a>
+                                <ul class ="Sanat">
+                                    <li><a href="{% url 'sheriy_sanat:talmeh' %}">Talmeh</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tanosib' %}">Tanosib</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tazod' %}">Tazod</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tashbeh' %}">Tashbih</a></li>
+                                </ul>
+                            </li>
+                             <li><a href="{% url 'Arxaizm_istorizm:arzaizm' %}">Arxaizm</a></li>
+                            <li><a href='{% url 'Arxaizm_istorizm:istorizm' %}'>Istorizm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'Base:korpus_haqida' %}">Alisher Navoiy korpusi haqida</a></li>
+                    <li><a href="{% url 'Base:maqola' %}">Korpusga oid maqolalar</a></li>
+                </ul>
+            </section>
+{% endblock %}
+
+
+{% block content %}
+   <section style="background-image: url({% static 'Base/images/Middle-bg.png' %})" class = "main_back main1">
+        <div class = "sec_div">
+              <p style="display:none;" id='id_gazal' >{{ in_gazal.id }}</p>
+  <p style="display:none;" id='searchWord_new' >{{ new_search }}</p>
+
+            <h4>{{ in_gazal.number }}</h4>
+            <div id = "gazallar" style="width: 60% !important;" class = "sec_div10">
+            <div id = "old_text" class = "old_text">
+                   {% for misras in misra %}
+                       <p class = "misra">{{ misras.misra }}</p>
+                {% endfor %}
+            </div>
+
+            </div>
+
+    <div style="width: 400px !important;" id = "hoverr" class = "hoverr">
+         <form id="wordform">
+        {% csrf_token %}
+        <ul class = "new_izoh">
+            <li style="background-image: url({% static 'Base/images/heritage-bg.png'%})" class = "semantik">
+                    <h3>Semantik izoh: </h3>
+                <h6>
+                    <input style="display: none; position: absolute"  class = "word_value" type="text" id="id" name="id" value="">
+                     <input  class = "word_value marquee" type="text" id="word" name="word" value=""/>
+
+                </h6>
+
+                </li>
+        </ul>
+
+
+
+
+    </form>
+   </div>
+        </div>
+{#   <div >#}
+       <div style="flex-direction: row !important; width: 50%; column-gap: 20px; justify-content: center; margin: 0px auto;" class ='sec_div'>
+           <a style="flex: 1;" class = "meta_new" href="{% url 'Gazal:in_gazal' oldingi %}">
+                <div class = "meta_hover"></div>
+                <p>Oldingi</p>
+            </a>
+
+            <a style="flex: 1.5;" class = "meta_new" href="{% url 'Gazal:gazal_meta' in_gazal.pk  %}">
+                <div class = "meta_hover"></div>
+                <p>Batafsil</p>
+            </a>
+
+             <a style="flex: 1;" class = "meta_new" href="{% url 'Gazal:in_gazal' keyingi  %}">
+                <div class = "meta_hover"></div>
+                <p>Keyingi</p>
+            </a>
+        </div>
+
+{#   </div>#}
+   </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js" integrity="sha512-JHJv/L48s1Hod24iSI0u9bcF/JlUi+YaxliKdbasnw/U1Lp9xxWkaZ3O5OuQPMkVwOVXeFkF4n4176ouA6Py3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.js" integrity="sha512-fkD+ERYA/LvkGF5GiipDr7myGZH3m8OPbYw62KE6qalbgykahcpfNjWe/RZmsY12qraS+wYUo2e51Zl2hShgVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+ var $word_length= $('#word');
+    var word_width = $word_length.outerWidth();
+
+if  (word_width > '200px'){
+    alert('salom')
+    $word_length.addClass('marquee')
+   }
+
+</script>
+{% endblock %}

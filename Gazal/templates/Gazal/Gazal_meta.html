@@ -1,0 +1,126 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block menu %}
+  <section class = "nav_sec">
+                <ul>
+                    <li><a href="{% url 'Base:tarjimayi_hol' %}">Tarjimayi hol</a></li>
+                    <li style="background-image: url({% static 'Base/images/heritage-bg.png' %})"><a href="{% url 'Search:search' %}">Korpus bo'yicha qidiruv</a></li>
+                    <li><a href="{% url 'Devon:devon' %}">Devonlari</a></li>
+                    <li><a href="{% url 'Asar:asar' %}">Asarlari</a></li>
+                    <li class = "badoee activve"><a href="">"Badoye` ul-vasat"</a>
+                        <ul  class = "Badoe">
+                            <li class = "activve"><a href="{% url 'Gazal:gazal' %}">G'azallar</a></li>
+                            <li><a href="{% url 'maqol_ibora:maqol' %}">Maqollar</a></li>
+                            <li><a href="{% url 'maqol_ibora:ibora' %}">Iboralar</a></li>
+                            <li class = "sanatt"><a href="">She`riy san`atlar</a>
+                                <ul class ="Sanat">
+                                    <li><a href="{% url 'sheriy_sanat:talmeh' %}">Talmeh</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tanosib' %}">Tanosib</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tazod' %}">Tazod</a></li>
+                                     <li><a href="{% url 'sheriy_sanat:tashbeh' %}">Tashbih</a></li>
+                                </ul>
+                            </li>
+                             <li><a href="{% url 'Arxaizm_istorizm:arzaizm' %}">Arxaizm</a></li>
+                            <li><a href='{% url 'Arxaizm_istorizm:istorizm' %}'>Istorizm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'Base:korpus_haqida' %}">Alisher Navoiy korpusi haqida</a></li>
+                    <li><a href="{% url 'Base:maqola' %}">Korpusga oid maqolalar</a></li>
+                </ul>
+            </section>
+{% endblock %}
+
+
+{% block content %}
+
+    <section style="background-image: url({% static 'Base/images/Middle-bg.png' %})" class = "main_back main1">
+        <div class = "sec_div">
+            <h1>Metama`lumot</h1>
+
+            <table class = "meta">
+                <tr>
+                    <td class = "line">Asar(devon) nomi</td>
+                    <td>"Badoye` ul-vasat</td>
+                </tr>
+                <tr>
+                    <td class = "line" >Muallifi</td>
+                    <td>Alisher Navoiy</td>
+                </tr>
+                <tr>
+                    <td class = "line">Muallif jinsi</td>
+                    <td>Erkak</td>
+                </tr>
+                <tr>
+                    <td class = "line">Muallifning tug`ilgan yili</td>
+                    <td>1441-yil, 9-fevral</td>
+                </tr>
+                <tr>
+                    <td class = "line">Muallifning vafot etgan yili</td>
+                    <td>1501-yil, 3-yanvar</td>
+                </tr>
+                <tr>
+                    <td class = "line">Yaratilgan vaqti</td>
+                    <td>1471-1472</td>
+                </tr>
+                <tr>
+                    <td class = "line">Nashr yili(vaqti)</td>
+                    <td>2011</td>
+                </tr>
+                <tr>
+                    <td class = "line">Nashr parametri</td>
+                    <td>Adadi: 100000</td>
+                </tr>
+                <tr>
+                    <td class = "line">Nashriyoti</td>
+                    <td>Tamaddun</td>
+                </tr>
+                <tr>
+                    <td class = "line">Qo`llanish sohasi</td>
+                    <td>adabiyotshunoslik</td>
+                </tr>
+                <tr>
+                    <td class = "line">Adabiy turi</td>
+                    <td>lirik</td>
+                </tr>
+                <tr>
+                    <td class = "line">Janri</td>
+                    <td>g`azal</td>
+                </tr>
+                <tr>
+                    <td class = "line">G`azal raqami</td>
+                    <td>{{ gazal_meta.number }}</td>
+                </tr>
+                <tr>
+                    <td class = "line">Matn tipi</td>
+                    <td>{{ gazal_meta.matn_tipi }}</td>
+                </tr>
+                <tr>
+                    <td class = "line">Uslubi</td>
+                    <td>badiiy</td>
+                </tr>
+                <tr>
+                    <td class = "line">Auditoriya yoshi</td>
+                    <td>{{ gazal_meta.auditoriya_yoshi }}</td>
+                </tr>
+                <tr>
+                    <td class = "line">Auditoriyaning salohiyat darajasi</td>
+                    <td>keng_omma uchun</td>
+                </tr>
+                <tr>
+                    <td class = "line">Ichki korpus turi</td>
+                    <td>Alisher Navoiy mualliflik korpusi</td>
+                </tr>
+                 <tr>
+                    <td class = "line">So`z(shakl) miqdori</td>
+                    <td>{{ number_word }} ta </td>
+                </tr>
+                <tr>
+                    <td class = "line">Teglovchi</td>
+                    <td>N. G`ulomova</td>
+                </tr>
+            </table>
+
+        </div>
+    </section>
+
+{% endblock %}

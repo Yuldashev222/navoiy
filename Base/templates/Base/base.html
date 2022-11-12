@@ -1,0 +1,342 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'Base/css/style.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'Base/css/animation.css' %}">
+
+</head>
+<body>
+{#    <section class ="back"></section>#}
+    <div class = "Navoiy_picture new new1">
+        <img src="{% static 'Base/images/logo.png' %}" alt="">
+    </div>
+
+    <div class = "Navoiy_picture new new2">
+        <img src="{% static 'Base/images/logo.png' %}" alt="">
+    </div>
+
+    <div class = "Navoiy_picture new new3">
+        <img src="{% static 'Base/images/logo.png' %}" alt="">
+    </div>
+    <div class = "Navoiy_picture new new4">
+        <img src="{% static 'Base/images/logo.png' %}" alt="">
+    </div>
+
+    <div class = "Navoiy_picture new new5">
+        <img src="{% static 'Base/images/logo.png' %}" alt="">
+    </div>
+
+    <div class = "Navoiy_picture new new6">
+        <img src="{% static 'Base/images/logo.png' %}" alt="">
+    </div>
+
+    <div class = "Navoiy_picture new new7">
+        <img src="{% static 'Base/images/logo.png' %}" alt="">
+    </div>
+    <div class = "Navoiy_picture new new8">
+        <img src="{% static 'Base/images/logo.png' %}" alt="">
+    </div>
+
+{#    <div class = "korishlar">#}
+{#        <p>20</p>#}
+{#        <img src="{% static 'Base/images/eye.png' %}" alt="">#}
+{#    </div>#}
+    <section class = "main_section">
+
+
+        <header class = "headerr">
+            <img class = "Giff" src="{% static 'Base/images/Header-bg.gif' %}" alt="">
+
+            <div class = "Name">
+                <p>Alisher Navoiy korpusi</p>
+            </div>
+            <img style="margin-left:-70% !important;" class = "navoiy select-div-animation" src="{% static 'Base/images/alisher navoiy.png' %}" alt="">
+
+            <div id="carouselExampleSlidesOnly" class="carousel slide select-div-animation" data-bs-ride="carousel">
+                <img class = "xat" src="{% static 'Base/images/xat.png' %}" alt="">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <p class = "carusel_p">Agar hikmatga bo‘lsa iltifoting —</p>
+                      <p class = "carusel_p">Ki, bo‘lsun Nuh umricha hayoting!</p>
+                  </div>
+                  <div class="carousel-item">
+                        <p class = "carusel_p">Naf’ing agar xalqqa beshakdurur</p>
+                      <p class = "carusel_p">Bilki, bu naf’ o’zungga ko’prakdurur.</p>
+                   </div>
+                  <div class="carousel-item">
+                      <p class = "carusel_p">Ilm Navoiy, senga maqsud bil,</p>
+                      <p class = "carusel_p"> Emdiki ilm o‘ldi,amal aylagil.</p>
+                     </div>
+                </div>
+              </div>
+            
+            {% block menu %}
+            {% endblock %}
+
+        </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <section style="background-image: url({% static 'Base/images/naqsh.jpg' %})" class = "foot"></section>
+
+    <footer>
+        <div class = "Navoiy_picture ">
+            <img src="{% static 'Base/images/logo.png' %}" alt="">
+        </div>
+    <div class = "foot_sec">
+        <div class = "Foot_div select-div-animation3">
+            <h4>Ruknlar</h4>
+            <a href="{% url 'Base:tarjimayi_hol' %}">Tarjimayi hol</a>
+            <a href="{% url 'Search:search' %}">Korpus bo'yicha qidiruv</a>
+            <a href="{% url 'Devon:devon' %}">Devonlar</a>
+            <a href="{% url 'Asar:asar' %}">Asarlar</a>
+            <a href="">"Badoye` ul-vasat"</a>
+            <a href="{% url 'Base:korpus_haqida' %}">Alisher Navoiy korpusi haqida</a>
+            <a href="{% url 'Base:maqola' %}">Korpusga oid maqolalar</a>
+        </div>
+        <div class = "Foot_div select-div-animation3">
+            <h4>Bo`limlar</h4>
+            <a href="{% url 'Gazal:gazal' %}">G'azallar</a>
+            <a href="{% url 'maqol_ibora:maqol' %}">Maqollar</a>
+            <a href="{% url 'maqol_ibora:ibora' %}">Iboralar</a>
+            <a href="{% url 'sheriy_sanat:talmeh' %}">Talmeh she`riy san`ati</a>
+            <a href="{% url 'sheriy_sanat:tanosib' %}">Tanosib she`riy san`ati</a>
+            <a href="{% url 'sheriy_sanat:tazod' %}">Tazod she`riy san`ati</a>
+            <a href="{% url 'sheriy_sanat:tashbeh' %}">Tashbih she`riy san`ati</a>
+        </div>
+        <div class = "Foot_div select-div-animation3 mur">
+            <h4>Murojaat uchun</h4>
+            <div class = "murojaat">
+                <img src="{% static 'Base/images/tel.png' %}" alt="">
+                <div class = "murojaat_tel">
+                    <p>Tel: +998 93 159 11 01</p>
+                    <p>Tel: +998 91 254 50 10</p>
+                </div>
+            </div>
+
+            <div class = "murojaat">
+                <img src="{% static 'Base/images/email.svg' %}" alt="">
+                <p>E-mail: sadullayevashahrizoda@gmail.com</p>
+            </div>
+            <div class = "murojaat">
+                <img src="{% static 'Base/images/tg.png' %}" alt="">
+                <p>Telegram: @programmer</p>
+            </div>
+        </div>
+    </div>
+</footer>
+{# {% if request.user.is_superuser %}#}
+{#    <a href = '{% url 'Gazal:file' %}'>Enter File</a>#}
+{#    {% endif %}#}
+    </section>
+</body>
+<script src="{% static 'Base/js/animation.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js:3766:29"></script>
+<script src="{% static 'Base/js/word.js' %}"></script>
+<script>
+
+   $(document).ready(function(){
+        $('.old_text > p').each(function() {
+                var $this = $(this);
+                words = $this.text()
+
+                console.log($this.text());
+
+                const re = ' ';
+                const wordlist = words.split(re);
+                var text = "";
+
+                wordlist.forEach(myFunction);
+
+                var output = "<p>" + text + "</p>";
+
+                document.getElementById("gazallar").innerHTML += output;
+
+                $('#gazallar >  p').addClass( "misra" );
+                function myFunction(item) {
+                     if(item.endsWith(',') === true){
+                        text += " " + "<sp>" + item.slice(0, -1) + "</sp>" + "<sp>" + "," + "</sp>";
+                    }
+                    else if(item.endsWith('.') === true){
+                        text += " " + "<sp>" + item.slice(0, -1) + "</sp>" + "<sp>" + "." + "</sp>";
+
+                    }
+                    else{
+                         text += " " + "<sp>" +  item + "</sp>";
+                    }
+                        }
+
+            });
+        document.getElementById('old_text').innerHTML = '';
+        // bind to each span
+        $('.sec_div10>  p > sp').hover(
+
+            function() {
+
+               let $word =$(this).text();
+               let $id_gazal =$('#id_gazal').text() ;
+               document.getElementById('id').value = $id_gazal;
+               document.getElementById('word').value = $word;
+
+               var $form = $('#wordform');
+               var $serializedData = $form.serialize();
+                console.log($serializedData);
+                $('#word').text($(this).css('background-color','rgb(136, 197, 243)').text());
+
+                $(this).addClass( "izoh" );
+
+                var $hover = $('#hoverr');
+
+
+                   var $izoh = $('.izoh')
+                var position = $izoh.position();
+
+                var width = $izoh.outerWidth();
+                var height = $izoh.outerHeight();
+
+                  $hover.css({
+                     position: "absolute",
+                     top: position.top + height + "px",
+                     left: position.left + "px",
+                   })
+                   .show();
+
+                   console.log(position.left);
+
+                $.ajax({
+                   url: '/gazalin_gazal/'+$id_gazal+'/',
+                   type: "POST",
+                   data: $serializedData,
+                   dataType: 'json',
+                   success: function (data) {
+
+                            $hover.css('opacity', '1');
+                            $hover.css('z-index', '1');
+                           console.log('ok');
+                           document.getElementById('id').value = data.soz;
+                           document.getElementById('word').value = data.mano;
+
+
+
+
+                        //  console.log('error');
+                        //  document.getElementById('id').value = data.soz;
+                        //  document.getElementById('word').value = data.mano;
+
+
+                   },
+                   error:function(e){
+                       console.log('topilmadi ');
+                       $hover.css('opacity', '0');
+                       $hover.css('z-index', '1');
+                   }
+                 });
+               },
+
+            function() { $('#word').text(''); $(this).css('background-color','');+
+            $(this).removeClass("izoh");
+            $hover = $('#hoverr')
+             $hover.css('opacity', '0');
+            $hover.css('z-index', '-1');
+            }
+        );
+
+       })
+
+
+    $(document).ready(function (){
+     if (window.location.href.indexOf('gazalin_gazal')>-1){
+        if(!$('.sec_div10 > p').text().trim()){
+            {#console.log("Topilmadi");#}
+        }
+        else{
+            $('.sec_div10  >  p').each(function() {
+                var $this = $(this);
+                $searchedWord = $('#searchWord_new').text();
+                console.log('So`z');
+                console.log($searchedWord);
+                $searchedWord2 = $searchedWord.replace($searchedWord[0], $searchedWord[0].toUpperCase());
+                $searchedWord3 = $searchedWord.replace($searchedWord[0], $searchedWord[0].toLowerCase());
+
+                if ($this.text().includes($searchedWord) === true || $this.text().includes($searchedWord2) === true || $this.text().includes($searchedWord3) === true){
+                     $this.css({"background-color": "rgb(136, 197, 243)"});
+                }
+            });
+        }
+    };
+})
+$(document).ready(function(){
+
+    if (window.location.href.indexOf('search_result')>-1){
+        if(!$('.result1 > p').text().trim()){
+            {#console.log("Topilmadi");#}
+        }
+        else{
+
+            $('.result1  >  p').each(function() {
+                var $this = $(this);
+                const re = ' ';
+                const wordlist = words.split(re);
+                var text = "";
+
+                wordlist.forEach(myFunction);
+
+                var output = "<p>" + text + "</p>";
+
+                document.getElementById("misralar").innerHTML += output;
+
+                $('#misralar >  p').addClass( "result1" );
+                function myFunction(item) {
+                     if(item.endsWith(',') === true){
+                        text += " " + "<sp>" + item.slice(0, -1) + "</sp>" + "<sp>" + "," + "</sp>";
+                    }
+                    else if(item.endsWith('.') === true){
+                        text += " " + "<sp>" + item.slice(0, -1) + "</sp>" + "<sp>" + "." + "</sp>";
+
+                    }
+                    else{
+                         text += " " + "<sp>" +  item + "</sp>";
+                    }
+                        }
+            });
+
+            $('.result1  >  p > sp').each(function() {
+                var $this = $(this);
+
+                $searchedWord = $('#searchedWord').text();
+
+                console.log($searchedWord);
+                $searchedWord2 = $searchedWord.replace($searchedWord[0], $searchedWord[0].toUpperCase());
+                $searchedWord3 = $searchedWord.replace($searchedWord[0], $searchedWord[0].toLowerCase());
+
+                if ($(this).text().includes($searchedWord) === true || $(this).text().includes($searchedWord2) === true || $(this).text().includes($searchedWord3) === true){
+                     $this.css({"background-color": "rgb(136, 197, 243)", "font-size": "110%"});
+                }
+            });
+        }
+
+    };
+
+
+})
+
+
+</script>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <br>
+         <br>
+         <h1>Misra Jadval</h1>
+         <form enctype="multipart/form-data" class = "form" action="{% url 'Gazal:file_save' %}"  method="post">
+                <br>
+                {% csrf_token %}
+                   <input type="file" name = 'files' class="mb-4">
+             {{ form.files }}
+                <button class = "btn btn-primary" type="submit">Send</button>
+            </form>
+<br>
+         <br>
+         <br>
+         <h1>So`z Jadval</h1>
+  <form enctype="multipart/form-data" class = "form" action="{% url 'Gazal:word_save' %}"  method="post">
+                <br>
+                {% csrf_token %}
+                   <input type="file" name = 'files' class="mb-4">
+             {{ form.files }}
+                <button class = "btn btn-primary" type="submit">Send</button>
+            </form>
+
+<br>
+         <br>
+         <br>
+         <h1>Meta Jadval</h1>
+
+
+  <form enctype="multipart/form-data" class = "form" action="{% url 'Gazal:meta_save' %}"  method="post">
+                <br>
+                {% csrf_token %}
+                   <input type="file" name = 'files' class="mb-4">
+             {{ form.files }}
+                <button class = "btn btn-primary" type="submit">Send</button>
+            </form>
+
+     <br>
+         <br>
+         <h1>Talmeh Jadval</h1>
+
+
+  <form enctype="multipart/form-data" class = "form" action="{% url 'sheriy_sanat:talmeh_save' %}"  method="post">
+                <br>
+                {% csrf_token %}
+                   <input type="file" name = 'files' class="mb-4">
+             {{ form.files }}
+                <button class = "btn btn-primary" type="submit">Send</button>
+            </form>
+
+  <br>
+         <br>
+         <h1>Tazod Jadval</h1>
+
+
+  <form enctype="multipart/form-data" class = "form" action="{% url 'sheriy_sanat:tazod_save' %}"  method="post">
+                <br>
+                {% csrf_token %}
+                   <input type="file" name = 'files' class="mb-4">
+             {{ form.files }}
+                <button class = "btn btn-primary" type="submit">Send</button>
+            </form>
+ <br>
+         <br>
+         <h1>Tanosib Jadval</h1>
+ <form enctype="multipart/form-data" class = "form" action="{% url 'sheriy_sanat:tanosib_save' %}"  method="post">
+                <br>
+                {% csrf_token %}
+                   <input type="file" name = 'files' class="mb-4">
+             {{ form.files }}
+                <button class = "btn btn-primary" type="submit">Send</button>
+            </form>
+
+
+<br>
+         <br>
+         <h1>Tashbih Jadval</h1>
+ <form enctype="multipart/form-data" class = "form" action="{% url 'sheriy_sanat:tashbih_save' %}"  method="post">
+                <br>
+                {% csrf_token %}
+                   <input type="file" name = 'files' class="mb-4">
+             {{ form.files }}
+                <button class = "btn btn-primary" type="submit">Send</button>
+            </form>
+
+  <br>
+         <h1>Arxaizm Jadval</h1>
+ <form enctype="multipart/form-data" class = "form" action="{% url 'Arxaizm_istorizm:arxaizm_save' %}"  method="post">
+                <br>
+                {% csrf_token %}
+                   <input type="file" name = 'files' class="mb-4">
+             {{ form.files }}
+                <button class = "btn btn-primary" type="submit">Send</button>
+            </form>
+</body>
+</html>

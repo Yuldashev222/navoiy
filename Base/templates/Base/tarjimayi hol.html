@@ -1,0 +1,148 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+
+{% block menu %}
+    <section class = "nav_sec">
+                <ul>
+                    <li style="background-image: url({% static 'Base/images/heritage-bg.png' %})" class = "activve"><a href="{% url 'Base:tarjimayi_hol' %}">Tarjimayi hol</a></li>
+                    <li><a href="{% url 'Search:search' %}">Korpus bo'yicha qidiruv</a></li>
+                    <li><a href="{% url 'Devon:devon' %}">Devonlari</a></li>
+                    <li><a href="{% url 'Asar:asar' %}">Asarlari</a></li>
+                    <li class = "badoee"><a href="">"Badoye` ul-vasat"</a>
+                        <ul class = "Badoe">
+                            <li><a href="{% url 'Gazal:gazal' %}">G'azallar</a></li>
+                            <li><a href="{% url 'maqol_ibora:maqol' %}">Maqollar</a></li>
+                            <li><a href={% url 'maqol_ibora:ibora' %}>Iboralar</a></li>
+                            <li class = "sanatt"><a href="">She`riy san`atlar</a>
+                                <ul class ="Sanat">
+                                    <li><a href="{% url 'sheriy_sanat:talmeh' %}">Talmeh</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tanosib' %}">Tanosib</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tazod' %}">Tazod</a></li>
+                                     <li><a href="{% url 'sheriy_sanat:tashbeh' %}">Tashbih</a></li>
+                                </ul>
+                            </li>
+                             <li><a href="{% url 'Arxaizm_istorizm:arzaizm' %}">Arxaizm</a></li>
+                            <li><a href='{% url 'Arxaizm_istorizm:istorizm' %}'>Istorizm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'Base:korpus_haqida' %}">Alisher Navoiy korpusi haqida</a></li>
+                    <li><a href="{% url 'Base:maqola' %}">Korpusga oid maqolalar</a></li>
+                </ul>
+            </section>
+
+{% endblock %}
+
+{% block content %}
+
+ <section  class = "main_back main1">
+        <div class = "sec_div" style="margin-top:150px;" >
+            <h1>Tarjimayi hol</h1>
+            <p>
+                Alisher Navoiy (1441-1501) - buyuk shoir va mutafakkir, davlat arbobi. To‘liq ismi – Nizomiddin Mir Alisher. “Navoiy” taxallusi ostida chig‘atoy (eski o‘zbek tili) hamda fors tilida “Foniy” taxallusi bilan ijod qilgan. Navoiy yoshligidan Xurosonning  bo‘lajak hukmdori Husayn Boyqaro bilan (humronlik davri:1469-1506 - yillar) do‘st bo‘lgan. 7-8 yoshidan she’rlar yozishni boshlagan. Navoiyning zamondoshi bo‘lmish tarixchi Xondamir qoldirgan ma’lumotlarga ko‘ra, mashhur o‘zbek shoiri Lutfiy (1369-1465) keksaygan chog‘larida yosh Alisher bilan ko‘rishadi va uning she’riy iqtidorini yuqori baholaydi.
+            </p>
+            <p>
+                Hayoti davomida Navoiy  musulmon Sharqining turli mamlakatlarida bo‘ladi, o‘z davrining taniqli shaxslari bilan ko‘rishadi. O‘zining she’riy mahoratini oshiradi. 1465-1466 - yillarda Navoiy ijodining shinavandalari uning ilk she’riy to‘plamini  tuzishadi. Bundan ko‘rinib turibdiki, o‘sha davrlardayoq Navoiy mashhur shoir bo‘lib ulgurgan. 1466-1469 - yillarda temuriylar o‘rtasidagi o‘zaro ichki nizolar tufayli Navoiy o‘zining ona shahri Hirotdan uzoqda yashashga majbur bo‘lgan.
+            </p>
+            <p>
+                1469-yil temuriy Husayn Boyqaro Hirotni egallaydi va Xuroson hukmdori bo‘ladi. Shu vaqtdan e’tiboran, Navoiy hayotining yangi bosqichi boshlanadi. U mamlakatning siyosiy hayotida faol ishtirok etadi. Shu yili Xuroson hukmdori Husayn Boyqaro Navoiyni davlat muhrdori, 1472-1476 - yillarda vazir, 1487-1488-yillarda Astrobod shahriga hokim etib tayinlaydi. Egallab turgan mansabi orqali u mamlakatning madaniy va ilmiy taraqqiyotida katta yordam ko‘rsatadi. Katta mulk egasiga aylanadi va 1480-yil Hirot shahrida va boshqa viloyatlarda o‘z hisobidan bir nechta madrasa, 52 ta rabot (yo‘lovchilar uchun bekat), 20 ta hovuz, 17 ta masjid, 10 ta so‘fiylar turar joyi (xonaqoh), 9 ta hammom, 16 ta ko‘prik va boshqalarni qurdiradi. Biroq, saroy amaldorlariga Navoiyning bu kabi faoliyati yoqmaydi va turli fitnalar orqali Husayn Boyqaro bilan munosabatlarini buzishadi.
+            </p>
+            <p>
+                Navoiy egallab turgan mansabidan ozod etilib, 1487-1488-yillarda Astrobod shahriga hukmdor sifatida yuboriladi. Bu yerda u ikki yil xizmat qiladi. Mazkur muddat nihoyasiga yetgachgina Husayn Boyqaro unga Hirotga qaytib, hokimiyatda mansabga ega bo‘lishiga ruxsat beradi. Lekin Navoiy bu taklifni rad etadi. Rad javobiga qaramay, Boyqaro Navoiyga sultonning yaqin kishisi (“muqarrabi  shohiy”) unvonini taklif etadi. Bunday lavozimda Navoiy barcha davlat ishlari bilan bog‘liq ishlarda qaror qabul qilish huquqiga ega edi. Shu vaqtdan Navoiy hayotining yangi bosqichi boshlanadi va u ko‘proq ijod bilan shug‘ullanadi. U yaratgan asarlarining katta qismi aynan shu davrga tegishli. Navoiy temuriylarning so‘nggi hukmronlik yillarida yashab ijod qilgan. Shuning uchun uning asarlarida jamoat ruhi, davrga xos muhim muammolar ustundir. 1490-1501 - yillar Navoiy eng nafis, ijtimoiy-falsafiy va ilmiy asarlarini yaratgan.
+            </p>
+            <p>
+                Alisher Navoiyning lirik merosi ulkan hisoblanib, 1483-1485-yillar Navoiy o‘z ichiga besh dostonni olgan “Xamsa” asarini yaratgan: “Hayrat ul-abror” (“Yaxshi kishilarining hayratlanishi”), “Farhod va Shirin”, “Layli va Majnun”, “Sab’ai sayyor” (“Yetti sayyora”), “Saddi Iskandariy” (“Iskandar devori”). Navoiyning “Xamsa”si mazkur janrda yaratilgan turkiy tildagi birinchi asar hisoblanadi. U  turkiy tilda ham bu kabi yirik ko‘lamdagi asar yaratilishi mumkinligini isbotlab berdi. Haqiqatan ham, Navoiy chig‘atoy tilida (eski o‘zbek tili) ham fors-tojik adabiyoti bilan bir darajada turuvchi asar yaratish mumkinligini isbotlashga harakat qilgan. Navoiy o‘zining besh xazinasi orqali buning uddasidan chiqqan.
+            </p>
+            <p>
+                Navoiy deyarli barcha janrlarida o‘z qalamini sinab ko‘radi va o‘z ovozi, o‘z uslubi borligini ko‘rsata oladi. Sharq adabiyotida “Layli va Majnun” mavzusida 120 dan ziyod doston yaratilgan. Navoiy ham shaxsiy yondashuvi ila ushbu mavzuda doston yozadi. Dostonda Layli va Majnun o‘rtasidagi sevgi bayon qilinadi. O‘z ifodasida Navoiy odamiylik va so‘fiylik sevgisini sharhlashga harakat qilgan. O‘zining so‘fiylik qarashlarini Navoiy, shuningdek, “Farhod va Shirin”, “Hayrat ul-abror” dostonlarida ham ifodalagan. Uning dostonlarida so‘fiylik mavzusi umumfalsafiy darajaga ko‘tarilgan. Mazkur dostonlarda bir vaqtning o‘zida shoirning insonparvarlik dunyoqarashlari orqali hayotning dolzarb muammolari qo‘yiladi. “Xamsa” dagi boshqa ikki dostonida - “Sab’ai sayyor” (“Yetti sayyora”), “Saddi Iskandariy” (“Iskandar devori”) hukmdor bilan bog‘liq muammolar yetakchi o‘ringa chiqadi.
+            </p>
+            <p>
+                Tarixdan ma’lumki, Navoiy temuriylar saroyiga yaqin bo‘lib, podshoh do‘sti Husayn Boyqaroga ta’sir ko‘rsata olgan. Shu sababli, Navoiy bu dostonlarida Husayn Boyqaroga qaratilgan g‘oyalarni ifodalab o‘tgan hamda dunyoning va shoh taxtining o‘zgaruvchanligi, hukmdorning o‘z xalqi oldidagi majburiyatlari haqida yozgan. Navoiy o‘zining ijtimoiy va siyosiy qat’iyati bilan ajralib turadi. Abdurahmon Jomiy (1414 -1492) Navoiyning “Xamsa”sini o‘qib, unga juda yuqori baho bergan.
+            </p>
+            <p>
+                O‘zining ijtimoiy va badiiy mohiyatiga binoan, Navoiyning “Xamsa”si O‘rta Osiyoda yuqori o‘ringa ega bo‘lgan. U ko‘p marotaba qayta ko‘chirilgan. Birgina Abu Rayhon Beruniy nomidagi sharqshunoslik instituti fondining o‘zida XV-XX asrlarda qayta ko‘chirilgan 166 ta qo‘lyozma nusxasi mavjud bo‘lib, ular to‘liq “Xamsa” asari yoki uning alohida dostonlarini tashkil etadi. Shulardan 84 tasi to‘liq doston ko‘rinishidadir. Navoiy “Xamsa”sining miqdori va keng tarqalishi uni O‘rta Osiyo intellektual hayotida alohida o‘rin egallaganligini ko‘rsatadi.
+            </p>
+            <p>
+                Alisher Navoiy butun hayoti davomida adabiy asarlarni siyosat bilan birlashtirgan. Yuqori mansabga ega shaxs bo‘la turib, u mamlakat hayotining ijtimoiy-iqtisodiy takomillashishiga katta hissa qo‘shgan va ilm - fan, san’at rivojiga homiylik qilgan, tinchlik va totuvlik doimo hukm surishiga doim harakat qilgan. Navoiy forsiy tilida yozilgan o‘z she’rlarini “Devoni Foniy” da jamlagan. U fors shoirlari bilan ham bellashmoqchi bo‘lgan. To‘plam shaklida chiqarilgan g‘azallarini o‘zini hisoblasak, ular 3154 tani tashkil etadi. Navoiy yozgan she’rlarining miqdoriga ko‘ra peshqadam desak, mubolag‘a bo‘lmaydi.
+            </p>
+            <p>
+                Navoiy o‘z she’riyati orqali o‘zbek (chig‘atoy) adabiyotini yangi darajaga olib chiqdi. Navoiyning nazmi mavzusining kengligi hamda janrining xilma-xilligi bo‘yicha undan oldingi o‘zbek adabiyotini ortda qoldiradi. U nazmda dostonlardagi kabi dunyoviy va diniy, so‘fiylikning dolzarb masalalarini ifoda qilgan. Navoiyning diniy asarlari ham nashr qilingan: “Arba’in” (“Qirq hadis”), “Nasoyim ul-muhabbat” (“Muhabbat shabadasi”) ning to‘liqroq matni nashr qilingan bo‘lib, unda 750 ta so‘fiy shayxlar haqida ma’lumot keltirilgan. Navoiy ilmiy asarlar ham yaratgan. Ular qatoriga fors va turkiy tillar qiyosi keltirilgan asarlarni kiritish mumkin: “Muhokamat ul-lug‘atayn” (“Ikki til muhokamasi”),  aruz nazariyasiga oid “Mezon ul-avzon” (“Hajm mezoni”), muammo janri nazariyasiga oid - “Mufradot” (“Jumboq”).
+            </p>
+            <p>
+                Bundan tashqari, u tarixiy mavzularda risolalar yaratgan: “Tarixi muluki Ajam” (“Ajam, ya’ni arab bo‘lmagan mamlakatlar tarixi”), “Tarixi anbiyo va hukamo” (“Payg‘ambar va donishmandlar tarixi”). Badiiy maktublarini “Munshaot” to‘plamiga jamlagan. Uning shoh asarlari: Jomiy hayoti haqida “Xamsat ul-mutahayyirin”, ustozilari Hasan Ardasher va Pahlavon Muhammad haqida “Holoti Sayyid Hasan Ardasher” (“Sayyid Hasan Ardasher hayoti”), “Holoti Pahlavon Muhammad” (“Pahlavon Muhammad hayoti”) asarlarini yozgan. Alisher Navoiyning so‘nggi asari – “Mahbub ul-qulub” (“Ko‘ngillarning sevgani”). Bu asar buyuk mutaffakkirning yaxshilik va yomonlik haqidagi qarashlarini o‘zida aks ettirgan.
+            </p>
+            <p>
+                Alisher Navoiy butun hayoti davomida adabiy asarlarni siyosat bilan birlashtirgan. Yuqori mansabga ega shaxs bo‘la turib, u mamlakat hayotining ijtimoiy-iqtisodiy takomillashishiga katta hissa qo‘shgan; ilm-fan, san’at rivojiga homiylik qilgan; tinchlik va totuvlik hukm surishiga doim harakat qilgan.
+            </p>
+            <p>
+                Ko‘rib turganimizdek, Navoiy merosi mavzu va janrlari bo‘yicha turlichadir. Uning asarlari XV asrdan hozirgi kungacha o‘zbek adabiyoti rivoji uchun xizmat qilib kelmoqda. Asrlar davomida uning asarlari taqlid va ilhom manbai bo‘lib kelmoqda. Quyida  Alisher Navoiy hayotiga taalluqli ma’lumotlarni taqdim qilamiz:
+            </p>
+            <ul>
+                <li>
+                    <p> Navoiyning ilmga bo‘lgan ishtiyoqi erta uyg‘onib, 4 yoshida maktabda ta’lim ola boshlagan;</p>
+                </li>
+<li>
+            <p>
+                 Navoiy 5 yoshida Farididdin Attorning “Mantiq ut-tayr” asarini yoddan bilgan;
+            </p></li>
+                <li>
+            <p>
+                 7 yoshli Nizomiddin Mir Alisher buyuk muhaddisimiz Buxoriy hazratlarining olti mingdan ziyod hadisi shariflarini yod bilgan;
+            </p></li>
+                <li>
+            <p>
+                 Mir Alisher 7-8 yoshlaridan boshlab g‘azallar yoza boshlagan;
+            </p></li>
+                <li>
+            <p>
+                 Alisher Navoiy “muqarrabi hazrati sultoniy” (“sulton hazratlarining eng yaqin kishisi”) degan unvonni olgan. Unvon Navoiyga davlatning barcha ishlariga aralashish huquqini bergan;
+            </p></li>
+                <li>
+            <p>
+                Turkiy tilni rivojlantirgani Navoiyning ma’naviyatimiz uchun ulkan jasorati hisoblanadi;
+            </p></li>
+                <li>
+            <p>
+                 Zahiriddin Muhammad Bobur: “Turkiy til bila to she’r aytibdurlar, hech kim oncha ko‘p va xo‘b aytqon emas”, – deb yozsa, Husayn Boyqaro: “Mir Alisher turk tilining o‘lik jasadig‘a Masih nafasi ila jon ato etdi” deb ta’kidlagan;
+            </p>
+                </li>
+                <li>
+                    <p>Alisher Navoiy o‘n besh-o‘n olti yoshlarida ham turkiy, ham forsiyda ijod qiladigan “ikki tilli” shoir sifatida tanilgan;</p>
+                </li>
+                <li>
+                    <p>Alisher Navoiy o‘smirlik yillarida o‘zi sevgan shoirlar ijodidan 50 ming baytdan ortiq she’rlarni yod bilganligini “Muhokamat ul-lug‘atayn” asarini aytib o’tadi;</p>
+                </li>
+                <li>
+                    <p>Alisher Navoiy turkiy tilda yozgan she’rlariga “Navoiy”, forsiy tildagi she’rlariga “Foniy” deb taxallus qo‘yadi;</p>
+                </li>
+                <li>
+                    <p>Navoiy asarlarida Farhod – komil inson timsolidir. U bolaligidan ilmga chanqoq bo‘ladi va bir marta o‘qigani sira yodidan chiqmaydi. Farhod o‘n yoshga yetganda hamma ilmlarni egallab bo‘ladi;</p>
+                </li>
+                <li>
+                    <p>Navoiy taxminan 18-19 yoshlarida Abdurahmon Jomiy bilan tanishadi. Jomiy uni ham farzand, ham shogird sifatida qadrlaydi. Keyinchalik bu ikki ulug‘ shoir o‘rtasidagi ustoz va shogirdlik munosabatlari yanada mustahkamlanib, ijodiy hamkorlikka aylanadi;</p>
+                </li>
+                <li>
+                    <p>Samarqand Navoiyning hayoti va ijodida muhim ahamiyat kasb etadi. Alisher Navoiy 1466 - yilda Samarqandga keladi va bu yerda madrasada tahsil olib, ilm-fan, adabiyot va san’at bilan tanishadi;</p>
+                </li>
+                <li>
+                    <p>1469 - yili Navoiy do‘sti Husayn Boyqaroning taxtga chiqishi munosabati bilan 90 baytdan iborat “Hiloliya” qasidasini yozadi (“hilol” – yangi chiqqan oy);</p>
+                </li>
+                <li>
+                    <p>Navoiy o‘z jamg‘armasi hisobidan Hirotda va butun Xuroson mamlakatida 300 dan ortiq inshootlar qurdirgan;</p>
+                </li>
+                <li>
+                    <p>Alisher Navoiy 16 ta adabiy janrda ijod qilgan: g‘azal, mustazod, muaxammas, musaddas, musamman, tarji’band, taribband, masnaviy, qasida, soqiynoma, qit’a, ruboiy, muammo, chiston, tuyuq, fard;</p>
+                </li>
+                <li>
+                    <p>Navoiy turkiy tildagi ilk “Xamsa”ni ikki yarim yil davomida yozadi. Dunyoning 64 tiliga tarjima qilingan bu asar 51 ming misradan ortiq. </p>
+                </li>
+                <li>
+                    <p>Shoirning lirik merosi umumiy hajmi 44901 misradan ortiq “Xazoyin ul-maoniy” nomli to‘rt devonga (1491-1498) jamlangan. </p>
+                </li>
+                <li>
+                    <p>Alisher Navoiy 1501-yil 3-yanvarda vafot etdi. Uni dafn etish chog‘ida maydalab yomg‘ir yog‘ib turgan edi. Buni tarixchi Xondamir “hatto tabiat ham motam tutdi” deya ta’riflagan.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}
