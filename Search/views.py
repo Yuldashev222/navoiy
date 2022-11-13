@@ -32,8 +32,8 @@ def search_result(request):
         return render(request, 'Search/Search_result.html')
     query = query.strip()
 
-    misralar = Misra.objects.filter(misra__icontains=query).order_by('-gazal_id')
-    gazal_soni = Gazal.objects.filter(misra__misra__icontains=query).count()
+    misralar = Misra.objects.filter(misra__icontains=query).order_by('gazal_id')
+    gazal_soni = Gazal.objects.filter(misralar__misra__icontains=query).distinct().count()
 
     p = Paginator(misralar, 20)
     page_number = request.GET.get('page')

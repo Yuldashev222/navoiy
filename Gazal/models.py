@@ -29,7 +29,7 @@ class Gazal(models.Model):
 
 
 class Misra(models.Model):
-    gazal_id = models.ForeignKey(Gazal, on_delete=CASCADE)
+    gazal_id = models.ForeignKey(Gazal, on_delete=CASCADE, related_name='misralar')
     misra = models.CharField(max_length=200)
 
     def __str__(self):
