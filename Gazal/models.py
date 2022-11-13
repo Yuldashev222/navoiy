@@ -35,10 +35,14 @@ class Misra(models.Model):
     def __str__(self):
         return self.misra
 
+    class Meta:
+        verbose_name = 'Misra'
+        verbose_name_plural = 'Misralar'
+
 
 class Soz(models.Model):
-    soz_id = models.ForeignKey(Gazal, blank=True, on_delete=models.CASCADE)
-    soz = models.CharField(max_length=200, blank=True)
+    soz_id = models.ForeignKey(Gazal, verbose_name='Gazal', blank=True, on_delete=models.CASCADE)
+    soz = models.CharField(max_length=200, blank=True, db_index=True)
     mano = models.CharField(max_length=100, blank=True)
     janr = models.CharField(max_length=100, default='g`azal')
     satr = models.ForeignKey(Misra, on_delete=CASCADE)
@@ -48,6 +52,10 @@ class Soz(models.Model):
     def __str__(self):
         return self.soz
 
+
+    class Meta:
+        verbose_name = 'Soz'
+        verbose_name_plural = 'Sozlar'
 
 class File(models.Model):
     name = models.CharField(max_length=100, default="")
@@ -71,6 +79,3 @@ class File_Meta(models.Model):
 
     def __str__(self):
         return self.name
-
-
-

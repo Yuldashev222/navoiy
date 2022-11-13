@@ -30,9 +30,7 @@ def maqola(request):
 
 def maqola_pdf(request, id):
     maqola = Maqola.objects.get(id=id)
-    print(maqola.pdf)
     maqola_pdf2 = Maqola.objects.filter(name='pdf')
-    print(maqola_pdf2)
     context = {
         'maqola_pdf': maqola,
     }

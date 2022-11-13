@@ -59,7 +59,6 @@ def tashbeh(request):
 def talmeh_save(request):
     if request.POST:
         form = FormTalmeh(request.POST, request.FILES)
-        print(request.POST)
         if form.is_valid():
             File_Talmeh.objects.all().delete()
             fileSW = form.save(commit=False)
@@ -67,7 +66,6 @@ def talmeh_save(request):
             fileSW.save()
 
             talmeh_file = File_Talmeh.objects.get(name='talmeh')
-            print(talmeh_file.files)
             df = pd.read_excel(talmeh_file.files)
             list_of_columns = df.columns.values
 

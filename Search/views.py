@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.db.models import Q
+from django.db.models import Q, F, Count
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 # Create your views here.
@@ -26,24 +26,26 @@ def search(request):
 
 
 def search_result(request):
-    query = request.GET.get('umumiy')
-    misra = Misra.objects.filter(Q(misra__icontains=query))
-    print(misra)
-    misra_soni = misra.count()
+    simvol = '‘'
+    query = request.GET.get('umumiy', '').strip().replace(simvol, '|').replace('\'', '|')
+
+    if not query:
+        return render(request, 'Search/Search_result.html')
+
+    misralar = Misra.objects.filter(misra__icontains=query)
+    gazal_soni = Gazal.objects.filter(misra__misra__icontains=query).count()
 
 
-
-    gazal = Gazal.objects.filter(misra__misra__icontains=query)
-    new_gazal = []
-    for x in gazal:
-        if x not in new_gazal:
-            new_gazal.append(x)
-
-    gazal_soni = len(new_gazal)
+    p = Paginator(misralar, 10)
+    page_number = request.GET.get('page')
+    print(page_number)
+    print()
+    print()
+    page_misra = p.get_page(page_number)
 
     context = {
-        'misra': misra,
-        'misra_soni': misra_soni,
+        'misra': page_misra,
+        'misra_soni': len(misralar),
         'gazal_soni': gazal_soni,
         'search_word': query,
     }
@@ -58,7 +60,6 @@ def search_special(request):
         janr = request.POST.get('janr')
         key_word = request.POST.get('key_word')
         key_word2 = request.POST.get('key_word2')
-        print(request.POST)
 
         if key_word and devon:
             # if not key_word2:
