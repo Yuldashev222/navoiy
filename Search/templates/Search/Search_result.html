@@ -91,26 +91,29 @@
                     </div>
 
                 {% endfor %}
-                <div class="pagination">
-                    {% if misra.has_previous %}
-                        <a href="?page={{ misra.previous_page_number }}">Prev</a>
-                    {% else %}
-                        <a class="select2-container--disabled" href="#">Prev</a>
-                    {% endif %}
-                    {% if misra.has_previous %}
-                        <a href="?page={{ misra.previous_page_number }}">{{ misra.previous_page_number }}</a>
-                    {% endif %}
-                    <a href="?page={{ misra.number }}" class="active">{{ misra.number }}</a>
-                    {% if misra.has_next %}
-                        <a href="?page={{ misra.next_page_number }}">{{ misra.next_page_number }}</a>
-                    {% endif %}
+                {% if query %}
+                    <div class="pagination" style="margin: 0 auto">
+                        {% if misra.has_previous %}
+                            <a href="?umumiy={{ query }}&page={{ misra.previous_page_number }}">Prev</a>
+                        {% else %}
+                            <a class="select2-container--disabled" href="#">Prev</a>
+                        {% endif %}
+                        {% if misra.has_previous %}
+                            <a href="?umumiy={{ query }}&page={{ misra.previous_page_number }}">{{ misra.previous_page_number }}</a>
+                        {% endif %}
+                        <a href="?umumiy={{ query }}&page={{ misra.number }}" class="active">{{ misra.number }}</a>
+                        {% if misra.has_next %}
+                            <a href="?umumiy={{ query }}&page={{ misra.next_page_number }}">{{ misra.next_page_number }}</a>
+                        {% endif %}
 
-                    {% if misra.has_next %}
-                        <a href="?page={{ misra.next_page_number }}">Next</a>
-                    {% else %}
-                        <a class="select2-container--disabled" href="#">Next</a>
-                    {% endif %}
-                </div>
+                        {% if misra.has_next %}
+                            <a href="?umumiy={{ query }}&page={{ misra.next_page_number }}">Next</a>
+                        {% else %}
+                            <a class="select2-container--disabled" href="#">Next</a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
                 <div id="hoverr" class="hoverr">
                     <form id="wordform2">
                         {% csrf_token %}

@@ -38,8 +38,6 @@ def in_gazal(request, pk):
         gazal_id = request.POST.get('id')
         word1 = request.POST.get('word')
         word2 = word1[0].lower() + word1[1:]
-        simvol = '‘'
-        word2 = str(word2).replace(simvol, '|')
         soz = Soz.objects.filter(soz_id=gazal_id).filter(soz=word2)
 
         if soz.exists():

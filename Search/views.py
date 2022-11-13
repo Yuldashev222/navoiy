@@ -1,7 +1,7 @@
 from django.core.paginator import Paginator
 from django.db.models import Q, F, Count
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, Http404
 # Create your views here.
 from django.views.decorators.http import require_GET
 
@@ -26,25 +26,22 @@ def search(request):
 
 
 def search_result(request):
-    simvol = '‘'
-    query = request.GET.get('umumiy', '').strip().replace(simvol, '|').replace('\'', '|')
+    query = request.GET.get('umumiy')
 
     if not query:
         return render(request, 'Search/Search_result.html')
+    query = query.strip()
 
-    misralar = Misra.objects.filter(misra__icontains=query)
+    misralar = Misra.objects.filter(misra__icontains=query).order_by('-gazal_id')
     gazal_soni = Gazal.objects.filter(misra__misra__icontains=query).count()
 
-
-    p = Paginator(misralar, 10)
+    p = Paginator(misralar, 20)
     page_number = request.GET.get('page')
-    print(page_number)
-    print()
-    print()
     page_misra = p.get_page(page_number)
 
     context = {
         'misra': page_misra,
+        'query': query,
         'misra_soni': len(misralar),
         'gazal_soni': gazal_soni,
         'search_word': query,
