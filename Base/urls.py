@@ -11,4 +11,5 @@ urlpatterns = [
     path('maqola/', views.maqola, name='maqola'),
     path('tarjimayi_hol/', views.tarjimayi_hol, name='tarjimayi_hol'),
     path('maqola_pdf/<int:id>/', views.maqola_pdf, name='maqola_pdf'),
+    path('mualliflar/', views.mualliflar, name='mualliflar')
 ]

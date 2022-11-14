@@ -1,0 +1,41 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block menu %}
+   <section class = "nav_sec">
+                <ul>
+                    <li><a href="{% url 'Base:tarjimayi_hol' %}">Tarjimayi hol</a></li>
+                    <li><a href="{% url 'Search:search' %}">Korpus bo'yicha qidiruv</a></li>
+                    <li style="background-image: url({% static 'Base/images/heritage-bg.png' %})" ><a href="{% url 'Devon:devon' %}">Devonlari</a></li>
+                    <li><a href="{% url 'Asar:asar' %}">Asarlari</a></li>
+                    <li class = "badoee"><a href="">"Badoye` ul-vasat"</a>
+                        <ul class = "Badoe">
+                            <li><a href="{% url 'Gazal:gazal' %}">G'azallar</a></li>
+                            <li><a href="{% url 'maqol_ibora:maqol' %}">Maqollar</a></li>
+                            <li><a href={% url 'maqol_ibora:ibora' %}>Iboralar</a></li>
+                            <li class = "sanatt"><a href="">She`riy san`atlar</a>
+                                <ul class ="Sanat">
+                                    <li><a href="{% url 'sheriy_sanat:talmeh' %}">Talmeh</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tanosib' %}">Tanosib</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tazod' %}">Tazod</a></li>
+                                     <li><a href="{% url 'sheriy_sanat:tashbeh' %}">Tashbih</a></li>
+                                </ul>
+                            </li>
+                             <li><a href="{% url 'Arxaizm_istorizm:arzaizm' %}">Arxaizm</a></li>
+                            <li><a href='{% url 'Arxaizm_istorizm:istorizm' %}'>Istorizm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'Base:korpus_haqida' %}">Alisher Navoiy korpusi haqida</a></li>
+                    <li class = "activve"><a href="{% url 'Base:maqola' %}">Korpusga oid maqolalar</a></li>
+                    <li><a href="{% url  'mualliflar' %}"> Korpus Mualliflari </a></li>
+                </ul>
+            </section>
+
+{% endblock %}
+
+{% block content %}
+    <div class="mualliflar" style="margin: 15%; margin-top: 7%; margin-bottom: 0;">
+        <h2>G‘oya muallifi va tadqiqot rahbari – f.f.d. (DSc) Abjalova Manzura Abdurashetovna</h2>
+        <h2>Semantik teglar bazasi muallifi va tadqiqotni bajaruvchi – G‘ulomova Nargiza Sa’dullayevna</h2>
+        <h2>Tizim arxitektori – Sa’dullayeva Shahrizoda Muhiddin qizi</h2>
+    </div>
+{% endblock content %}

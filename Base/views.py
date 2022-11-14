@@ -18,6 +18,9 @@ def korpus_haqida(request):
     return render(request, 'Base/korpus haqida.html')
 
 
+def mualliflar(request):
+    return render(request, 'Base/mualliflar.html')
+
 def maqola(request):
     maqolalar = Maqola.objects.all()
 
