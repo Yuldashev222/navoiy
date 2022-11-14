@@ -144,7 +144,7 @@ body{
     font-style: italic;
 }
 .nav_sec{
-    margin-top: 11.5%;
+    margin-top: 15%;
     /*opacity: 0;*/
     transition: 1s ease-in-out;
 }
@@ -273,7 +273,7 @@ a:hover{
     transform: scale(1.1);
 }
 .sec_div{
-    padding:2% 4%;
+    padding:5% 4%;
     display: flex;
     flex-direction: column;
     justify-content: center;
