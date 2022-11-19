@@ -58,7 +58,7 @@ from django.shortcuts import render
 # con.close()
 
 # Create your views here.
-from Maqol_Ibora.models import Maqol, Ibora
+from .models import Maqol, Ibora
 
 
 def maqol(request):

@@ -33,7 +33,7 @@ class Misra(models.Model):
     misra = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.misra
+        return f'{self.gazal_id.number}: {self.misra[:10]}...'
 
     class Meta:
         verbose_name = 'Misra'

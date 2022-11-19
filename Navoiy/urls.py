@@ -25,7 +25,7 @@ urlpatterns = [
     path('asar/', include('Asar.urls')),
     path('gazal', include('Gazal.urls')),
     path('sheriy_sanat/', include('Sheriy_sanat.urls')),
-    path('maqol_ibora', include('Maqol_Ibora.urls')),
+    path('maqol_ibora/', include('Maqol_Ibora.urls')),
     path('search/', include('Search.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('arxa_ist/', include('Arzaizm_istorizm.urls')),

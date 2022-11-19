@@ -1,6 +1,6 @@
 from django.urls import path, include
 
-from Maqol_Ibora import views
+from . import views
 
 app_name = 'maqol_ibora'
 
