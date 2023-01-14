@@ -1,0 +1,83 @@
+{% extends 'Base/base.html' %}
+{% load static %}
+{% block menu %}
+   <section class = "nav_sec">
+                <ul>
+                    <li><a href="{% url 'Base:tarjimayi_hol' %}">Tarjimayi hol</a></li>
+                    <li><a href="{% url 'Search:search' %}">Korpus bo'yicha qidiruv</a></li>
+                    <li><a href="{% url 'Devon:devon' %}">Devonlari</a></li>
+                    <li><a href="{% url 'Asar:asar' %}">Asarlari</a></li>
+                    <li class = "badoee activve"><a href="">"Badoye` ul-vasat"</a>
+                        <ul class = "Badoe">
+                            <li><a href="{% url 'Gazal:gazal' %}">G'azallar</a></li>
+                             <li style="background-image: url({% static 'Base/images/heritage-bg.png' %})" class = "activve"><a href="{% url 'Devon:janr' %}">Boshqa janrlar</a></li>
+                            <li><a href="{% url 'maqol_ibora:maqol' %}">Maqollar</a></li>
+                            <li><a href={% url 'maqol_ibora:ibora' %}>Iboralar</a></li>
+                            <li class = "sanatt"><a href="">She`riy san`atlar</a>
+                                <ul class ="Sanat">
+                                    <li><a href="{% url 'sheriy_sanat:talmeh' %}">Talmeh</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tanosib' %}">Tanosib</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tazod' %}">Tazod</a></li>
+                                    <li><a href="{% url 'sheriy_sanat:tashbeh' %}">Tashbih</a></li>
+                                </ul>
+                            </li>
+                             <li><a href="{% url 'Arxaizm_istorizm:arzaizm' %}">Arxaizm</a></li>
+                            <li><a href='{% url 'Arxaizm_istorizm:istorizm' %}'>Istorizm</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'Base:korpus_haqida' %}">Alisher Navoiy korpusi haqida</a></li>
+                    <li><a href="{% url 'Base:maqola' %}">Korpusga oid maqolalar</a></li>
+                    <li><a href="{% url  'Base:mualliflar' %}"> Korpus Mualliflari </a></li>
+                </ul>
+            </section>
+{% endblock %}
+
+
+{% block content %}
+   <section style="background-image: url({% static 'Base/images/Middle-bg.png' %})" class = "main_back main1">
+        <div class = "sec_div">
+              <p style="display:none;" id='id_janr' ></p>
+  <p style="display:none;" id='janr_searchWord_new' >{{ new_search }}</p>
+
+            <h4>{{ janr_new.janr_number }} - {{ janr_name }}</h4>
+            <div id = "gazallar" style="width: 60% !important;" class = "sec_div10">
+            <div id = "old_text" class = "old_text">
+                   {% for misras in janr_misra %}
+                       <p class = "misra">{{ misras.misra }}</p>
+                {% endfor %}
+            </div>
+
+            </div>
+
+    <div style="width: 400px !important;" id = "janr_hoverr" class = "hoverr">
+         <form id="janr_wordform">
+        {% csrf_token %}
+        <ul class = "new_izoh">
+            <li style="background-image: url({% static 'Base/images/heritage-bg.png'%})" class = "semantik">
+                    <h3>Semantik izoh: </h3>
+                <h6>
+                    <input style="display: none; position: absolute"  class = "word_value" type="text" id="janr_id" name="janr_id" value="">
+                     <input  class = "word_value" type="text" id="janr_word" name="janr_word" value=""/>
+
+                </h6>
+
+                </li>
+        </ul>
+
+
+
+
+    </form>
+   </div>
+
+   <div >
+        </div>
+
+{#   </div>#}
+   </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js" integrity="sha512-JHJv/L48s1Hod24iSI0u9bcF/JlUi+YaxliKdbasnw/U1Lp9xxWkaZ3O5OuQPMkVwOVXeFkF4n4176ouA6Py3A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.js" integrity="sha512-fkD+ERYA/LvkGF5GiipDr7myGZH3m8OPbYw62KE6qalbgykahcpfNjWe/RZmsY12qraS+wYUo2e51Zl2hShgVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+{% endblock %}

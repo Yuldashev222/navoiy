@@ -36,7 +36,7 @@ class JanrMisra(models.Model):
     chiston_javobi = models.ForeignKey(ChistonJavob, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.janr_number}. {self.misra}'
+        return self.misra
 
     class Meta:
         verbose_name = 'Janr misrasi'
@@ -51,8 +51,12 @@ class JanrMisraSoz(models.Model):
     auditoriya_yoshi = models.ForeignKey(Auditoriya_yoshi, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return f'{self.janr_number}. {self.soz}'
+        return self.soz
 
     class Meta:
         verbose_name = 'Janr sozi'
         verbose_name_plural = 'Janr sozlari'
+
+# class Janr_meta(models.Model):
+#     janr = models.ForeignKey(Janrlar, on_delete=CASCADE)
+#     janr_number = models.IntegerField(null=True)
